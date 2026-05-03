@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Camilo's Original Motor Works – Lista de trabajos del taller" />
+    <title>Camilo's Original Motor Works</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- ========== CABECERA ========== -->
+    <header class="header">
+ 
+      <div class="header-franja" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+ 
+      <div class="header-contenido">
+ 
+        <div class="header-escudo" aria-hidden="true">
+          <div class="escudo-anillo-exterior"></div>
+          <div class="escudo-anillo">
+            <span class="escudo-texto">★ SINCE 2015 · LOS SANTOS · STRAWBERRY ★</span>
+          </div>
+          <div class="escudo-centro">
+            <span class="escudo-icono">🔧</span>
+          </div>
+        </div>
+ 
+        <div class="header-textos">
+          <span class="header-nombre">Camilo's</span>
+          <h1 class="header-titulo">
+            Original<br />
+            <em class="header-titulo-dorado">Motor Works</em>
+          </h1>
+          <p class="header-subtitulo">Full Service · Lowriders · Custom Builds</p>
+        </div>
+ 
+      </div>
+ 
+      <!-- Estadísticas rápidas -->
+      <div class="header-stats" aria-label="Resumen de tareas">
+        <div class="stat">
+          <span class="stat-numero">3</span>
+          <span class="stat-label">Pendientes</span>
+        </div>
+        <div class="stat-separador" aria-hidden="true">·</div>
+        <div class="stat">
+          <span class="stat-numero stat-numero-ok">2</span>
+          <span class="stat-label">Completadas</span>
+        </div>
+        <div class="stat-separador" aria-hidden="true">·</div>
+        <div class="stat">
+          <span class="stat-numero">5</span>
+          <span class="stat-label">Total</span>
+        </div>
+      </div>
+ 
+      <!-- Barra de progreso -->
+      <div class="progreso-wrap" aria-label="Progreso: 2 de 5 tareas completadas">
+        <div class="progreso-barra">
+          <div class="progreso-fill" style="width: 40%"></div>
+        </div>
+        <span class="progreso-texto">2 / 5 completadas</span>
+      </div>
+ 
+      <div class="header-franja" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+ 
+    </header>
+ 
+    <!-- ========== CONTENIDO PRINCIPAL ========== -->
+    <main class="main">
+ 
+      <!-- Formulario para añadir una tarea nueva -->
+      <section class="seccion-añadir" aria-labelledby="titulo-añadir">
+ 
+        <h2 class="seccion-titulo" id="titulo-añadir">
+          <span class="titulo-deco" aria-hidden="true">——</span>
+          Nuevo trabajo
+          <span class="titulo-deco" aria-hidden="true">——</span>
+        </h2>
+ 
+        <form class="formulario" action="#" method="post" aria-label="Formulario para añadir trabajo al taller">
+          <div class="formulario-campo">
+            <label class="formulario-label" for="input-tarea">
+              Descripción del trabajo
+            </label>
+            <div class="formulario-fila">
+              <input
+                class="formulario-input"
+                type="text"
+                id="input-tarea"
+                name="tarea"
+                placeholder="ej. Instalar hidráulicos en Voodoo…"
+                autocomplete="off"
+                aria-required="true"
+              />
+              <button class="btn btn-primario" type="submit" aria-label="Añadir trabajo">
+                <span class="btn-icono" aria-hidden="true">+</span>
+                <span class="btn-texto">Añadir</span>
+              </button>
+            </div>
+          </div>
+        </form>
+ 
+      </section>
+ 
+      <!-- Lista de trabajos del taller -->
+      <section class="seccion-lista" aria-labelledby="titulo-lista">
+ 
+        <div class="lista-cabecera">
+          <h2 class="seccion-titulo seccion-titulo-claro" id="titulo-lista">
+            <span class="titulo-deco" aria-hidden="true">——</span>
+            Ordenes de trabajo
+            <span class="titulo-deco" aria-hidden="true">——</span>
+          </h2>
+          <span class="lista-badge" aria-label="3 trabajos pendientes">3 pendientes</span>
+        </div>
+ 
+        <ul class="lista-tareas" role="list" aria-label="Lista de trabajos del taller Camilo's">
+ 
+          <!-- Tarea 1 — pendiente -->
+          <li class="tarea" role="listitem">
+            <div class="tarea-contenido">
+              <input
+                class="tarea-checkbox"
+                type="checkbox"
+                id="tarea-1"
+                name="tarea-1"
+                aria-label="Marcar como completada: Instalar hidráulicos en Voodoo"
+              />
+              <label class="tarea-label" for="tarea-1">
+                <span class="tarea-check-visual" aria-hidden="true"></span>
+                <span class="tarea-texto">Instalar hidraulicos en Voodoo</span>
+              </label>
+            </div>
+            <span class="tarea-estado tarea-estado-pendiente">En cola</span>
+          </li>
+ 
+          <!-- Tarea 2 — completada -->
+          <li class="tarea tarea-completada" role="listitem">
+            <div class="tarea-contenido">
+              <input
+                class="tarea-checkbox"
+                type="checkbox"
+                id="tarea-2"
+                name="tarea-2"
+                checked
+                aria-label="Marcar como completada: Pintura custom en Faction"
+              />
+              <label class="tarea-label" for="tarea-2">
+                <span class="tarea-check-visual" aria-hidden="true"></span>
+                <span class="tarea-texto">Pintura custom en Faction</span>
+              </label>
+            </div>
+            <span class="tarea-estado tarea-estado-lista">Listo</span>
+          </li>
+ 
+          <!-- Tarea 3 — pendiente -->
+          <li class="tarea" role="listitem">
+            <div class="tarea-contenido">
+              <input
+                class="tarea-checkbox"
+                type="checkbox"
+                id="tarea-3"
+                name="tarea-3"
+                aria-label="Marcar como completada: Tapicería de terciopelo en Lowrider"
+              />
+              <label class="tarea-label" for="tarea-3">
+                <span class="tarea-check-visual" aria-hidden="true"></span>
+                <span class="tarea-texto">Tapiceria de terciopelo en Lowrider</span>
+              </label>
+            </div>
+            <span class="tarea-estado tarea-estado-pendiente">En cola</span>
+          </li>
+ 
+          <!-- Tarea 4 — completada -->
+          <li class="tarea tarea-completada" role="listitem">
+            <div class="tarea-contenido">
+              <input
+                class="tarea-checkbox"
+                type="checkbox"
+                id="tarea-4"
+                name="tarea-4"
+                checked
+                aria-label="Marcar como completada: Llantas Moonbeam personalizadas"
+              />
+              <label class="tarea-label" for="tarea-4">
+                <span class="tarea-check-visual" aria-hidden="true"></span>
+                <span class="tarea-texto">Llantas Moonbeam personalizadas</span>
+              </label>
+            </div>
+            <span class="tarea-estado tarea-estado-lista">Listo</span>
+          </li>
+ 
+          <!-- Tarea 5 — pendiente -->
+          <li class="tarea" role="listitem">
+            <div class="tarea-contenido">
+              <input
+                class="tarea-checkbox"
+                type="checkbox"
+                id="tarea-5"
+                name="tarea-5"
+                aria-label="Marcar como completada: Motor turbo en Sabre"
+              />
+              <label class="tarea-label" for="tarea-5">
+                <span class="tarea-check-visual" aria-hidden="true"></span>
+                <span class="tarea-texto">Motor turbo en Sabre</span>
+              </label>
+            </div>
+            <span class="tarea-estado tarea-estado-pendiente">En cola</span>
+          </li>
+ 
+        </ul>
+ 
+        <!-- Botones de eliminación -->
+        <div class="acciones" role="group" aria-label="Acciones sobre trabajos">
+          <button class="btn btn-secundario" type="button" aria-label="Eliminar todos los trabajos completados">
+            Eliminar completadas
+          </button>
+          <button class="btn btn-peligro" type="button" aria-label="Eliminar todos los trabajos">
+            Limpiar todo
+          </button>
+        </div>
+ 
+      </section>
+ 
+    </main>
+ 
+    <!-- ========== PIE DE PÁGINA ========== -->
+    <footer class="footer">
+      <p class="footer-nombre">Camilo's Original Motor Works</p>
+      <p class="footer-direccion">Strawberry, Los Santos · South of the Olympic Freeway</p>
+    </footer>
+ 
+  </body>
+</html>
