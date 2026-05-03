@@ -1,1 +1,1 @@
-# Prueba-t-cnica---Curso-4
+# Prueba-tecnica---Curso-4
