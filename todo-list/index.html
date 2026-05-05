@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Camilo's Original Motor Works – Lista de trabajos del taller" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Camilo's Original Motor Works – Lista de trabajos del taller">
     <title>Camilo's Original Motor Works</title>
-    <link rel="stylesheet" href="css/styles.css" />
+ 
+    <link rel="stylesheet" href="css/styles.css">
   </head>
-
+ 
   <body>
+ 
     <!-- ========== CABECERA ========== -->
     <header class="header">
  
+      <!-- franja ajedrezada decorativa -->
       <div class="header-franja" aria-hidden="true">
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
@@ -21,7 +24,8 @@
  
       <div class="header-contenido">
  
-        <div class="header-escudo" aria-hidden="true">
+        <!-- escudo decorativo — aria-hidden porque es puramente visual -->
+        <figure class="header-escudo" aria-hidden="true">
           <div class="escudo-anillo-exterior"></div>
           <div class="escudo-anillo">
             <span class="escudo-texto">★ SINCE 2015 · LOS SANTOS · STRAWBERRY ★</span>
@@ -29,12 +33,12 @@
           <div class="escudo-centro">
             <span class="escudo-icono">🔧</span>
           </div>
-        </div>
+        </figure>
  
         <div class="header-textos">
-          <span class="header-nombre">Camilo's</span>
+          <p class="header-nombre">Camilo's</p>
           <h1 class="header-titulo">
-            Original<br />
+            Original
             <em class="header-titulo-dorado">Motor Works</em>
           </h1>
           <p class="header-subtitulo">Full Service · Lowriders · Custom Builds</p>
@@ -42,30 +46,28 @@
  
       </div>
  
-      <!-- Estadísticas rápidas -->
-      <div class="header-stats" aria-label="Resumen de tareas">
-        <div class="stat">
-          <span class="stat-numero">3</span>
-          <span class="stat-label">Pendientes</span>
-        </div>
-        <div class="stat-separador" aria-hidden="true">·</div>
-        <div class="stat">
-          <span class="stat-numero stat-numero-ok">2</span>
-          <span class="stat-label">Completadas</span>
-        </div>
-        <div class="stat-separador" aria-hidden="true">·</div>
-        <div class="stat">
-          <span class="stat-numero">5</span>
-          <span class="stat-label">Total</span>
-        </div>
-      </div>
+      <!-- estadísticas rápidas — section con aria-label es válido -->
+      <section class="header-stats" aria-label="Resumen de tareas">
+        <dl class="stats-lista">
+          <div class="stat">
+            <dt class="stat-label">Pendientes</dt>
+            <dd class="stat-numero">3</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat-label">Completadas</dt>
+            <dd class="stat-numero stat-numero-ok">2</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat-label">Total</dt>
+            <dd class="stat-numero">5</dd>
+          </div>
+        </dl>
+      </section>
  
-      <!-- Barra de progreso -->
-      <div class="progreso-wrap" aria-label="Progreso: 2 de 5 tareas completadas">
-        <div class="progreso-barra">
-          <div class="progreso-fill" style="width: 40%"></div>
-        </div>
-        <span class="progreso-texto">2 / 5 completadas</span>
+      <!-- barra de progreso — progress nativo de HTML5 -->
+      <div class="progreso-wrap">
+        <progress class="progreso-barra" value="2" max="5" aria-label="Progreso: 2 de 5 tareas completadas"></progress>
+        <p class="progreso-texto">2 / 5 completadas</p>
       </div>
  
       <div class="header-franja" aria-hidden="true">
@@ -103,7 +105,7 @@
                 placeholder="ej. Instalar hidráulicos en Voodoo…"
                 autocomplete="off"
                 aria-required="true"
-              />
+              >
               <button class="btn btn-primario" type="submit" aria-label="Añadir trabajo">
                 <span class="btn-icono" aria-hidden="true">+</span>
                 <span class="btn-texto">Añadir</span>
@@ -117,37 +119,38 @@
       <!-- Lista de trabajos del taller -->
       <section class="seccion-lista" aria-labelledby="titulo-lista">
  
-        <div class="lista-cabecera">
+        <header class="lista-cabecera">
           <h2 class="seccion-titulo seccion-titulo-claro" id="titulo-lista">
             <span class="titulo-deco" aria-hidden="true">——</span>
-            Ordenes de trabajo
+            Órdenes de trabajo
             <span class="titulo-deco" aria-hidden="true">——</span>
           </h2>
-          <span class="lista-badge" aria-label="3 trabajos pendientes">3 pendientes</span>
-        </div>
+          <!-- p con role="status" es válido para aria-label -->
+          <p class="lista-badge" role="status">3 pendientes</p>
+        </header>
  
-        <ul class="lista-tareas" role="list" aria-label="Lista de trabajos del taller Camilo's">
+        <!-- sin role="list" — ul ya lo es por defecto -->
+        <ul class="lista-tareas" aria-label="Lista de trabajos del taller Camilo's">
  
-          <!-- Tarea 1 — pendiente -->
-          <li class="tarea" role="listitem">
+          <!-- Tarea 1 — pendiente — sin role="listitem", li ya lo es -->
+          <li class="tarea">
             <div class="tarea-contenido">
               <input
                 class="tarea-checkbox"
                 type="checkbox"
                 id="tarea-1"
                 name="tarea-1"
-                aria-label="Marcar como completada: Instalar hidráulicos en Voodoo"
-              />
+              >
               <label class="tarea-label" for="tarea-1">
                 <span class="tarea-check-visual" aria-hidden="true"></span>
-                <span class="tarea-texto">Instalar hidraulicos en Voodoo</span>
+                <span class="tarea-texto">Instalar hidráulicos en Voodoo</span>
               </label>
             </div>
-            <span class="tarea-estado tarea-estado-pendiente">En cola</span>
+            <p class="tarea-estado tarea-estado-pendiente">En cola</p>
           </li>
  
           <!-- Tarea 2 — completada -->
-          <li class="tarea tarea-completada" role="listitem">
+          <li class="tarea tarea-completada">
             <div class="tarea-contenido">
               <input
                 class="tarea-checkbox"
@@ -155,36 +158,34 @@
                 id="tarea-2"
                 name="tarea-2"
                 checked
-                aria-label="Marcar como completada: Pintura custom en Faction"
-              />
+              >
               <label class="tarea-label" for="tarea-2">
                 <span class="tarea-check-visual" aria-hidden="true"></span>
                 <span class="tarea-texto">Pintura custom en Faction</span>
               </label>
             </div>
-            <span class="tarea-estado tarea-estado-lista">Listo</span>
+            <p class="tarea-estado tarea-estado-lista">Listo</p>
           </li>
  
           <!-- Tarea 3 — pendiente -->
-          <li class="tarea" role="listitem">
+          <li class="tarea">
             <div class="tarea-contenido">
               <input
                 class="tarea-checkbox"
                 type="checkbox"
                 id="tarea-3"
                 name="tarea-3"
-                aria-label="Marcar como completada: Tapicería de terciopelo en Lowrider"
-              />
+              >
               <label class="tarea-label" for="tarea-3">
                 <span class="tarea-check-visual" aria-hidden="true"></span>
-                <span class="tarea-texto">Tapiceria de terciopelo en Lowrider</span>
+                <span class="tarea-texto">Tapicería de terciopelo en Lowrider</span>
               </label>
             </div>
-            <span class="tarea-estado tarea-estado-pendiente">En cola</span>
+            <p class="tarea-estado tarea-estado-pendiente">En cola</p>
           </li>
  
           <!-- Tarea 4 — completada -->
-          <li class="tarea tarea-completada" role="listitem">
+          <li class="tarea tarea-completada">
             <div class="tarea-contenido">
               <input
                 class="tarea-checkbox"
@@ -192,42 +193,40 @@
                 id="tarea-4"
                 name="tarea-4"
                 checked
-                aria-label="Marcar como completada: Llantas Moonbeam personalizadas"
-              />
+              >
               <label class="tarea-label" for="tarea-4">
                 <span class="tarea-check-visual" aria-hidden="true"></span>
                 <span class="tarea-texto">Llantas Moonbeam personalizadas</span>
               </label>
             </div>
-            <span class="tarea-estado tarea-estado-lista">Listo</span>
+            <p class="tarea-estado tarea-estado-lista">Listo</p>
           </li>
  
           <!-- Tarea 5 — pendiente -->
-          <li class="tarea" role="listitem">
+          <li class="tarea">
             <div class="tarea-contenido">
               <input
                 class="tarea-checkbox"
                 type="checkbox"
                 id="tarea-5"
                 name="tarea-5"
-                aria-label="Marcar como completada: Motor turbo en Sabre"
-              />
+              >
               <label class="tarea-label" for="tarea-5">
                 <span class="tarea-check-visual" aria-hidden="true"></span>
                 <span class="tarea-texto">Motor turbo en Sabre</span>
               </label>
             </div>
-            <span class="tarea-estado tarea-estado-pendiente">En cola</span>
+            <p class="tarea-estado tarea-estado-pendiente">En cola</p>
           </li>
  
         </ul>
  
-        <!-- Botones de eliminación -->
+        <!-- botones de eliminación -->
         <div class="acciones" role="group" aria-label="Acciones sobre trabajos">
-          <button class="btn btn-secundario" type="button" aria-label="Eliminar todos los trabajos completados">
+          <button class="btn btn-secundario" type="button">
             Eliminar completadas
           </button>
-          <button class="btn btn-peligro" type="button" aria-label="Eliminar todos los trabajos">
+          <button class="btn btn-peligro" type="button">
             Limpiar todo
           </button>
         </div>
