@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Camilo's Original Motor Works – Lista de trabajos del taller">
     <title>Camilo's Original Motor Works</title>
- 
     <link rel="stylesheet" href="css/styles.css">
   </head>
- 
+
   <body>
- 
+
+    <!-- aviso para lectores de pantalla -->
+    <p class="aviso-live" aria-live="polite" aria-atomic="true"></p>
+
     <!-- ========== CABECERA ========== -->
     <header class="header">
- 
-      <!-- franja ajedrezada decorativa -->
+
       <div class="header-franja" aria-hidden="true">
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
       </div>
- 
+
       <div class="header-contenido">
- 
-        <!-- escudo decorativo — aria-hidden porque es puramente visual -->
+
         <figure class="header-escudo" aria-hidden="true">
           <div class="escudo-anillo-exterior"></div>
           <div class="escudo-anillo">
@@ -34,7 +34,7 @@
             <span class="escudo-icono">🔧</span>
           </div>
         </figure>
- 
+
         <div class="header-textos">
           <p class="header-nombre">Camilo's</p>
           <h1 class="header-titulo">
@@ -43,54 +43,57 @@
           </h1>
           <p class="header-subtitulo">Full Service · Lowriders · Custom Builds</p>
         </div>
- 
+
+        <!-- botón modo oscuro / claro -->
+        <button class="btn-modo" type="button" aria-label="Cambiar modo de color">🌙 Modo oscuro</button>
+
       </div>
- 
-      <!-- estadísticas rápidas — section con aria-label es válido -->
+
+      <!-- estadísticas -->
       <section class="header-stats" aria-label="Resumen de tareas">
         <dl class="stats-lista">
           <div class="stat">
             <dt class="stat-label">Pendientes</dt>
-            <dd class="stat-numero">3</dd>
+            <dd class="stat-numero">0</dd>
           </div>
           <div class="stat">
             <dt class="stat-label">Completadas</dt>
-            <dd class="stat-numero stat-numero-ok">2</dd>
+            <dd class="stat-numero stat-numero-ok">0</dd>
           </div>
           <div class="stat">
             <dt class="stat-label">Total</dt>
-            <dd class="stat-numero">5</dd>
+            <dd class="stat-numero">0</dd>
           </div>
         </dl>
       </section>
- 
-      <!-- barra de progreso — progress nativo de HTML5 -->
+
+      <!-- barra de progreso -->
       <div class="progreso-wrap">
-        <progress class="progreso-barra" value="2" max="5" aria-label="Progreso: 2 de 5 tareas completadas"></progress>
-        <p class="progreso-texto">2 / 5 completadas</p>
+        <progress class="progreso-barra" value="0" max="1" aria-label="Progreso de tareas completadas"></progress>
+        <p class="progreso-texto">0 / 0 completadas</p>
       </div>
- 
+
       <div class="header-franja" aria-hidden="true">
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
       </div>
- 
+
     </header>
- 
+
     <!-- ========== CONTENIDO PRINCIPAL ========== -->
     <main class="main">
- 
+
       <!-- Formulario para añadir una tarea nueva -->
       <section class="seccion-añadir" aria-labelledby="titulo-añadir">
- 
+
         <h2 class="seccion-titulo" id="titulo-añadir">
           <span class="titulo-deco" aria-hidden="true">——</span>
           Nuevo trabajo
           <span class="titulo-deco" aria-hidden="true">——</span>
         </h2>
- 
+
         <form class="formulario" action="#" method="post" aria-label="Formulario para añadir trabajo al taller">
           <div class="formulario-campo">
             <label class="formulario-label" for="input-tarea">
@@ -106,140 +109,69 @@
                 autocomplete="off"
                 aria-required="true"
               >
-              <button class="btn btn-primario" type="submit" aria-label="Añadir trabajo">
+              <button class="btn btn-primario" type="submit" aria-label="Añadir trabajo" disabled>
                 <span class="btn-icono" aria-hidden="true">+</span>
                 <span class="btn-texto">Añadir</span>
               </button>
             </div>
+            <p class="contador-chars" aria-live="polite">80/80</p>
           </div>
         </form>
- 
+
       </section>
- 
+
       <!-- Lista de trabajos del taller -->
       <section class="seccion-lista" aria-labelledby="titulo-lista">
- 
+
         <header class="lista-cabecera">
           <h2 class="seccion-titulo seccion-titulo-claro" id="titulo-lista">
             <span class="titulo-deco" aria-hidden="true">——</span>
             Órdenes de trabajo
             <span class="titulo-deco" aria-hidden="true">——</span>
           </h2>
-          <!-- p con role="status" es válido para aria-label -->
-          <p class="lista-badge" role="status">3 pendientes</p>
+          <p class="lista-badge" role="status">0 pendientes</p>
         </header>
- 
-        <!-- sin role="list" — ul ya lo es por defecto -->
-        <ul class="lista-tareas" aria-label="Lista de trabajos del taller Camilo's">
- 
-          <!-- Tarea 1 — pendiente — sin role="listitem", li ya lo es -->
-          <li class="tarea">
-            <div class="tarea-contenido">
-              <input
-                class="tarea-checkbox"
-                type="checkbox"
-                id="tarea-1"
-                name="tarea-1"
-              >
-              <label class="tarea-label" for="tarea-1">
-                <span class="tarea-check-visual" aria-hidden="true"></span>
-                <span class="tarea-texto">Instalar hidráulicos en Voodoo</span>
-              </label>
-            </div>
-            <p class="tarea-estado tarea-estado-pendiente">En cola</p>
-          </li>
- 
-          <!-- Tarea 2 — completada -->
-          <li class="tarea tarea-completada">
-            <div class="tarea-contenido">
-              <input
-                class="tarea-checkbox"
-                type="checkbox"
-                id="tarea-2"
-                name="tarea-2"
-                checked
-              >
-              <label class="tarea-label" for="tarea-2">
-                <span class="tarea-check-visual" aria-hidden="true"></span>
-                <span class="tarea-texto">Pintura custom en Faction</span>
-              </label>
-            </div>
-            <p class="tarea-estado tarea-estado-lista">Listo</p>
-          </li>
- 
-          <!-- Tarea 3 — pendiente -->
-          <li class="tarea">
-            <div class="tarea-contenido">
-              <input
-                class="tarea-checkbox"
-                type="checkbox"
-                id="tarea-3"
-                name="tarea-3"
-              >
-              <label class="tarea-label" for="tarea-3">
-                <span class="tarea-check-visual" aria-hidden="true"></span>
-                <span class="tarea-texto">Tapicería de terciopelo en Lowrider</span>
-              </label>
-            </div>
-            <p class="tarea-estado tarea-estado-pendiente">En cola</p>
-          </li>
- 
-          <!-- Tarea 4 — completada -->
-          <li class="tarea tarea-completada">
-            <div class="tarea-contenido">
-              <input
-                class="tarea-checkbox"
-                type="checkbox"
-                id="tarea-4"
-                name="tarea-4"
-                checked
-              >
-              <label class="tarea-label" for="tarea-4">
-                <span class="tarea-check-visual" aria-hidden="true"></span>
-                <span class="tarea-texto">Llantas Moonbeam personalizadas</span>
-              </label>
-            </div>
-            <p class="tarea-estado tarea-estado-lista">Listo</p>
-          </li>
- 
-          <!-- Tarea 5 — pendiente -->
-          <li class="tarea">
-            <div class="tarea-contenido">
-              <input
-                class="tarea-checkbox"
-                type="checkbox"
-                id="tarea-5"
-                name="tarea-5"
-              >
-              <label class="tarea-label" for="tarea-5">
-                <span class="tarea-check-visual" aria-hidden="true"></span>
-                <span class="tarea-texto">Motor turbo en Sabre</span>
-              </label>
-            </div>
-            <p class="tarea-estado tarea-estado-pendiente">En cola</p>
-          </li>
- 
-        </ul>
- 
+
+        <!-- filtros -->
+        <div class="filtros" role="group" aria-label="Filtrar tareas">
+          <button class="filtro-btn filtro-btn-activo" data-filtro="todas" type="button">Todas</button>
+          <button class="filtro-btn" data-filtro="pendientes" type="button">Pendientes</button>
+          <button class="filtro-btn" data-filtro="completadas" type="button">Completadas</button>
+        </div>
+
+        <!-- mensaje cuando no hay tareas -->
+        <p class="lista-vacia" style="display: none;">No hay trabajos en cola 🔧</p>
+
+        <!-- mensaje cuando todas están completadas -->
+        <p class="mensaje-todo-listo" style="display: none;">¡Todo listo! Buen trabajo 🏁</p>
+
+        <!-- lista — JS la rellena -->
+        <ul class="lista-tareas" aria-label="Lista de trabajos del taller Camilo's"></ul>
+
         <!-- botones de eliminación -->
         <div class="acciones" role="group" aria-label="Acciones sobre trabajos">
-          <button class="btn btn-secundario" type="button">
+          <button class="btn btn-desmarcar" type="button" disabled>
+            Desmarcar todas
+          </button>
+          <button class="btn btn-secundario" type="button" disabled>
             Eliminar completadas
           </button>
           <button class="btn btn-peligro" type="button">
             Limpiar todo
           </button>
         </div>
- 
+
       </section>
- 
+
     </main>
- 
+
     <!-- ========== PIE DE PÁGINA ========== -->
     <footer class="footer">
       <p class="footer-nombre">Camilo's Original Motor Works</p>
       <p class="footer-direccion">Strawberry, Los Santos · South of the Olympic Freeway</p>
     </footer>
- 
+
+    <script src="js/app.js"></script>
+
   </body>
 </html>
