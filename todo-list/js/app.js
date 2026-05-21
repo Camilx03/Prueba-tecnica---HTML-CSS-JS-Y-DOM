@@ -1,6 +1,4 @@
-// ---- ESTADO DE LA APLICACIÓN ----
-
-// array de tareas — fuente de verdad de la aplicación
+// array de tareas
 // cada tarea tiene texto, estado, y hora de creación
 let todos = [
   { texto: "Instalar hidráulicos en Voodoo",     completada: false, hora: "09:00" },
@@ -20,8 +18,6 @@ let modoOscuro = false;
 const LIMITE_CARACTERES = 80;
 
 
-// ---- REFERENCIAS AL DOM ----
-
 const listaTareas            = document.querySelector(".lista-tareas");
 const inputTarea             = document.querySelector("#input-tarea");
 const formulario             = document.querySelector(".formulario");
@@ -38,7 +34,6 @@ const btnDesmarcarTodas      = document.querySelector(".btn-desmarcar");
 
 
 // ---- PERSISTENCIA CON LOCALSTORAGE ----
-
 function guardarEnStorage() {
   localStorage.setItem("todos", JSON.stringify(todos));
   localStorage.setItem("modoOscuro", JSON.stringify(modoOscuro));
@@ -58,7 +53,6 @@ function cargarDeStorage() {
 
 
 // ---- MODO OSCURO / CLARO ----
-
 function aplicarModo() {
   if (modoOscuro) {
     document.body.classList.add("modo-oscuro");
@@ -77,7 +71,6 @@ function toggleModo() {
 
 
 // ---- HORA ACTUAL ----
-
 // devuelve la hora actual en formato HH:MM
 function obtenerHora() {
   const ahora = new Date();
@@ -88,7 +81,6 @@ function obtenerHora() {
 
 
 // ---- FILTRADO ----
-
 function obtenerTareasFiltradas() {
   // pendientes primero, completadas al final
   const pendientes  = todos.filter(function(t) { return !t.completada; });
@@ -106,7 +98,6 @@ function obtenerTareasFiltradas() {
 
 
 // ---- RENDERIZADO ----
-
 function renderTodos() {
   listaTareas.innerHTML = "";
 
@@ -169,7 +160,6 @@ function renderTodos() {
 
 
 // ---- ACTUALIZAR CONTADORES ----
-
 function actualizarContadores() {
   const total       = todos.length;
   const completadas = todos.filter(function(t) { return t.completada; }).length;
@@ -198,7 +188,6 @@ function actualizarContadores() {
 
 
 // ---- ACTUALIZAR BOTONES DE ACCIONES ----
-
 // desactiva "eliminar completadas" si no hay ninguna
 // desactiva "desmarcar todas" si no hay ninguna completada
 function actualizarBotonesAcciones() {
@@ -214,7 +203,6 @@ function actualizarBotonesAcciones() {
 
 
 // ---- ACTUALIZAR FILTROS ----
-
 function actualizarFiltros() {
   const botonesFiltro = document.querySelectorAll(".filtro-btn");
   botonesFiltro.forEach(function(btn) {
@@ -227,7 +215,6 @@ function actualizarFiltros() {
 
 
 // ---- AVISO ARIA-LIVE ----
-
 function anunciar(mensaje) {
   if (avisoLiveRegion) {
     avisoLiveRegion.textContent = mensaje;
@@ -239,7 +226,6 @@ function anunciar(mensaje) {
 
 
 // ---- CONTADOR DE CARACTERES ----
-
 function actualizarContadorChars() {
   const restantes = LIMITE_CARACTERES - inputTarea.value.length;
   if (contadorChars) {
@@ -257,7 +243,6 @@ function actualizarContadorChars() {
 
 
 // ---- FLASH VERDE EN EL INPUT ----
-
 function flashInputOk() {
   inputTarea.classList.add("input-ok");
   setTimeout(function() {
@@ -267,7 +252,6 @@ function flashInputOk() {
 
 
 // ---- AÑADIR TAREA ----
-
 function añadirTarea() {
   const texto = inputTarea.value.trim();
   if (texto === "") return;
@@ -293,7 +277,6 @@ function añadirTarea() {
 
 
 // ---- MARCAR TAREA COMO COMPLETADA ----
-
 function marcarTarea(indice) {
   todos[indice].completada = !todos[indice].completada;
   const estado = todos[indice].completada ? "completada" : "pendiente";
@@ -305,7 +288,6 @@ function marcarTarea(indice) {
 
 
 // ---- DESMARCAR TODAS ----
-
 function desmarcarTodas() {
   todos.forEach(function(t) { t.completada = false; });
   anunciar("Todas las tareas desmarcadas");
@@ -316,7 +298,6 @@ function desmarcarTodas() {
 
 
 // ---- ELIMINAR TAREA INDIVIDUAL ----
-
 function eliminarTarea(indice) {
   const textoEliminada = todos[indice].texto;
 
@@ -343,7 +324,6 @@ function eliminarTarea(indice) {
 
 
 // ---- ELIMINAR TAREAS COMPLETADAS ----
-
 function eliminarCompletadas() {
   const cantidad = todos.filter(function(t) { return t.completada; }).length;
   if (cantidad === 0) return;
@@ -357,7 +337,6 @@ function eliminarCompletadas() {
 
 
 // ---- ELIMINAR TODAS LAS TAREAS ----
-
 function eliminarTodas() {
   if (todos.length === 0) return;
 
@@ -370,7 +349,6 @@ function eliminarTodas() {
 
 
 // ---- EVENT LISTENERS ----
-
 formulario.addEventListener("submit", function(evento) {
   evento.preventDefault();
   añadirTarea();
@@ -435,8 +413,7 @@ if (btnDesmarcarTodas) {
 }
 
 
-// ---- INICIO ----
-
+// ---- INCIO ----
 cargarDeStorage();
 aplicarModo();
 renderTodos();

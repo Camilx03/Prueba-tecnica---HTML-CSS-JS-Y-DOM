@@ -1,5 +1,3 @@
-/* ---- ESTILOS BASE ---- */
-
 * {
   box-sizing: border-box; /* el padding y border se incluyen en el tamaño total del elemento */
   margin: 0;              /* quita los márgenes por defecto del navegador */
@@ -26,7 +24,7 @@ button {
 }
 
 input {
-  font-family: inherit; /* los inputs también heredan la fuente del body */
+  font-family: inherit; /* los inputs tambien heredan la fuente del body */
 }
 
 :focus-visible {
@@ -36,7 +34,6 @@ input {
 
 
 /* ---- LAYOUT GENERAL ---- */
-
 .header,
 .main,
 .footer {
@@ -59,7 +56,6 @@ input {
 
 
 /* ---- HEADER ---- */
-
 .header {
   background-color: #1a1410; /* fondo negro oscuro del header */
 }
@@ -154,7 +150,7 @@ input {
 
 /* textos del header */
 .header-nombre {
-  display: block;         /* ocupa su propia línea aunque sea un span */
+  display: block;         /* ocupa su propia linea aunque sea un span */
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2rem;
   color: #e0b660;         /* dorado */
@@ -165,7 +161,7 @@ input {
 .header-titulo {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 3rem;
-  line-height: 1;         /* sin espacio extra entre líneas */
+  line-height: 1;         /* sin espacio extra entre lineas */
   color: #f5eedc;         /* crema claro */
   letter-spacing: 0.04em;
   text-shadow: 3px 3px 0 #8c1f1f, 5px 5px 0 rgba(0, 0, 0, 0.3); /* sombra doble efecto cartel */
@@ -174,15 +170,15 @@ input {
 .header-titulo-dorado {
   font-style: normal; /* cancela la cursiva del <em> */
   color: #e0b660;
-  display: block;     /* "Motor Works" va en su propia línea */
+  display: block;     /* "Motor Works" va en su propia linea */
 }
 
 .header-subtitulo {
   margin-top: 12px;
   font-family: "Courier New", Courier, monospace;
   font-size: 0.85rem;
-  color: #d9ceaf;         /* crema grisáceo */
-  letter-spacing: 0.2em;  /* muy espaciado, estilo subtítulo vintage */
+  color: #d9ceaf;         /* crema grisaceo */
+  letter-spacing: 0.2em;  /* muy espaciado, estilo subtitulo vintage */
   text-transform: uppercase;
 }
 
@@ -195,7 +191,7 @@ input {
   justify-content: center;
   gap: 20px;
   padding: 16px 24px 8px;
-  border-top: 1px solid rgba(200, 150, 60, 0.2); /* línea separadora sutil */
+  border-top: 1px solid rgba(200, 150, 60, 0.2); /* linea separadora sutil */
   margin-top: 4px;
 }
 
@@ -270,8 +266,7 @@ input {
 }
 
 
-/* ---- TÍTULOS DE SECCIÓN ---- */
-
+/* ---- TITULOS DE SECCION ---- */
 .seccion-titulo {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
@@ -297,8 +292,7 @@ input {
 }
 
 
-/* ---- SECCIÓN AÑADIR TAREA ---- */
-
+/* ---- SECCION AÑADIR TAREA ---- */
 .seccion-añadir {
   background-color: #f0e6c8;
   border: 2px solid #a89878;
@@ -358,7 +352,6 @@ input {
 
 
 /* ---- BOTONES ---- */
-
 .btn {
   display: inline-flex;  /* coloca icono y texto en fila */
   align-items: center;
@@ -427,8 +420,7 @@ input {
 }
 
 
-/* ---- SECCIÓN LISTA DE TAREAS ---- */
-
+/* ---- SECCION LISTA DE TAREAS ---- */
 .seccion-lista {
   background-color: #f0e6c8;
   border: 2px solid #a89878;
@@ -466,7 +458,6 @@ input {
 
 
 /* ---- TAREAS ---- */
-
 .lista-tareas {
   padding: 8px 0; /* pequeño espacio arriba y abajo de la lista */
 }
@@ -624,7 +615,6 @@ input {
 
 
 /* ---- ACCIONES (botones de borrar) ---- */
-
 .acciones {
   display: flex;
   gap: 12px;
@@ -638,7 +628,6 @@ input {
 
 
 /* ---- FOOTER ---- */
-
 .footer {
   padding: 24px;
   text-align: center;
@@ -664,7 +653,6 @@ input {
 
 
 /* ---- ANIMACIONES CSS ---- */
-
 /* barra de progreso crece al cargar */
 @keyframes crecer {
   from { width: 0; }    /* empieza en 0 */
@@ -692,7 +680,6 @@ input {
 
 
 /* ---- RESPONSIVE ---- */
-
 /* movil portrait — pantallas de hasta 480px de ancho */
 @media (max-width: 480px) {
   .main {
@@ -832,7 +819,6 @@ input {
 
 
 /* ---- MEJORAS AÑADIDAS ---- */
-
 /* aviso aria-live — invisible pero accesible */
 .aviso-live {
   position: absolute;
