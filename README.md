@@ -6,7 +6,7 @@ Esta es mi prueba técnica del bootcamp. He creado una todo list con temática d
 
 - HTML5
 - CSS3
-- JavaScript Vanilla
+- JavaScript
 
 ## Lo que he hecho
 
@@ -73,7 +73,7 @@ He aplicado mobile first, los estilos base están pensados para móvil y se van 
 - A usar flexbox para maquetar
 - A aplicar mobile first con media queries y min-width
 - A usar nth-child para alternar colores en la franja del header
-- A manipular el DOM con JavaScript Vanilla
+- A manipular el DOM con JavaScript
 - A usar addEventListener, querySelector, createElement y classList
 - A guardar datos en localStorage
 - A trabajar con el patrón Single Source of Truth
